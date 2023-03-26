@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th>Order Date</th>
+                                <th>Tracking number</th>
+                                <th>Total Price</th>
+                                <th>Status</th>
+                                <th>Payment method</th>
+                                <th>Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in orders %}
+                          <tr>
+                            <td>{{item.placed_at}}</td>
+                                <td>{{item.tracking_no}}</td>
+                                <td>{{item.total_price}}</td>
+                                <td>{{item.status}}</td>
+                                <td>{{item.payment_mode}}</td>
+                                <td><a href="{% url 'vieworder' item.id %}" class="btn btn-outline-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                    <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                                    <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                                  </svg>View </a>
+                                </td>
+                          </tr>
+                          {% endfor %}
+                          
+                        </tbody>
+                      </table>
+
+                    
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

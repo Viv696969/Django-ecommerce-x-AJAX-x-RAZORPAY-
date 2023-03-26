@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Order View</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Shipping Details</h4>
+                            <hr>
+                            <label> First Name </label>
+                            <div class="border py-1">{{o.f_name}}</div>
+                            <label> LAST NAME</label>
+                            <div class="border py-1">{{o.l_name}}</div>
+                            <label> Email </label>
+                            <div class="border py-1">{{o.email}}</div>
+                            <label> Phone number </label>
+                            <div class="border py-1">{{o.phone}}</div>
+                            <label> Address</label>
+                            <div class="border py-1">
+                                {{o.address}}
+                                <hr>
+                                {{o.city}}
+                                <hr>
+                                {{o.state}}
+                                
+
+                            </div>
+                            <label> Pin Code </label>
+                            <div class="border py-1">{{o.pin}}</div>
+                            <label>payment mode</label>
+                            <div class="border py-1">{{o.payment_mode}}</div>
+                        </div>
+                        <div class="col-md-6">
+                           
+                            <table class="table table-bordered">
+                                <thead>
+                                  <tr>
+                                    <th>Name</th>
+                                        <th>Quantity</th>
+                                        <th>price</th>
+                                        <th>image</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    {% for item in orderitem %}
+                                  <tr>
+                                    <a href="{% url 'product' item.product.id %}">
+                                    <td>
+                                        {{item.product.name}}</td>
+                                        <td>{{item.quantity}}</td>
+                                        <td>{{item.price}}</td>
+                                        <td><img src="{{item.product.product_image.url}}" width="50px" height="50px"> </td>
+                                    </a>
+                                  </tr>
+                                  {% endfor %}
+                                  
+                                </tbody>
+                              </table>
+                           
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
