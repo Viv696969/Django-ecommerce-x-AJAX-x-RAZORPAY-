@@ -1,0 +1,10 @@
+# Django-ecommerce-x-AJAX-x-RAZORPAY-
+
+Advance  django project which includes  various features such as
+  1) PAYMENT INTEGRATION RAZOR PAY
+  2) AJAX
+  3) JQUERY
+  4) LIVE WHATS CHAT
+  5) WHATS APP INTEGRATION
+  6) HASHED LOGIN/REGISTERATION
+  7) FREE OTP GENERATION/VERIFICATION   WITHOUT TWILIO
